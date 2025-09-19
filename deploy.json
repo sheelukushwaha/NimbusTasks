@@ -1,0 +1,33 @@
+{
+  "family": "nimbustasks-service",
+  "networkMode": "awsvpc",
+  "requiresCompatibilities": ["FARGATE"],
+  "cpu": "512",
+  "memory": "1024",
+  "containerDefinitions": [
+    {
+      "name": "nimbustasks-container",
+      "image": "799416476229.dkr.ecr.ap-south-1.amazonaws.com/nimbustasks:latest",
+      "essential": true,
+      "portMappings": [
+        {
+          "containerPort": 3000,
+          "protocol": "tcp"
+        }
+      ],
+      "environment": [
+        { "name": "NODE_ENV", "value": "production" },
+        { "name": "MONGODB_URI", "value": "mongodb+srv://sheelukushwaha7:jempc4Orfcm7QL0N@clustersk.oyuxzux.mongodb.net/nimbus" }
+      ],
+      "logConfiguration": {
+        "logDriver": "awslogs",
+        "options": {
+          "awslogs-group": "/ecs/nimbustasks",
+          "awslogs-region": "ap-south-1",
+          "awslogs-stream-prefix": "ecs"
+        }
+      }
+    }
+  ],
+  "executionRoleArn": "arn:aws:iam::799416476229:role/ecsTaskExecutionRole"
+}
