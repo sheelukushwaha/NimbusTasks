@@ -17,7 +17,7 @@
       ],
       "environment": [
         { "name": "NODE_ENV", "value": "production" },
-        { "name": "MONGODB_URI", "value": "mongodb+srv://sheelukushwaha7:jempc4Orfcm7QL0N@clustersk.oyuxzux.mongodb.net/nimbus" }
+        { "name": "MONGO_URI", "value": "mongodb+srv://sheelukushwaha7:jempc4Orfcm7QL0N@clustersk.oyuxzux.mongodb.net/nimbus" }
       ],
       "logConfiguration": {
         "logDriver": "awslogs",
