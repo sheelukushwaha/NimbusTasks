@@ -15,7 +15,7 @@ const nextConfig = {
 
   env: {
     // Only custom variables allowed
-    MONGODB_URI: process.env.MONGODB_URI || '',
+    MONGO_URI: process.env.MONGO_URI || '',
   },
 
   eslint: {
